@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RZK Electric - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .find-us .shop-card {
+            width: 100%;
+            max-width: 400px; /* Adjusted size */
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RZK Electric</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <input type="button" value="Submit" onclick="saveUserData()">
+        </form>
+        <section class="find-us">
+            <h3>Visit Us</h3>
+            <img id="shop-card-img" src="images/shop_card_1.jpeg" alt="Shop Card" class="shop-card">
+            <button onclick="changeShopCard()">Change Shop Card</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RZK Electric. All rights reserved.</p>
+        <p>Follow us on <a href="https://m.facebook.com/p/RZK-Traders-100054589382895/" target="_blank">Facebook</a></p>
+    </footer>
+
+    <script>
+        var currentImage = 1;
+        var totalImages = 3; // Total number of shop card images
+
+        function changeShopCard() {
+            currentImage = (currentImage % totalImages) + 1;
+            document.getElementById('shop-card-img').src = 'images/shop_card_' + currentImage + '.jpeg';
+        }
+
+        function saveUserData() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Save user data to local storage
+            localStorage.setItem('userData', JSON.stringify({ name: name, email: email, message: message }));
+
+            // Optional: Clear form fields after saving
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Inform user that the data has been saved (you can customize this message)
+            alert('Your message has been saved. Thank you!');
+        }
+
+        // Load saved user data on page load
+        window.onload = function() {
+            var userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData) {
+                // Optionally display saved user data here
+            }
+        };
+    </script>
+</body>
+</html>

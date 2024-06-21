@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RZK Electric - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom style for the background image */
+        .header-background {
+            background-image: url('images/background_5.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Adjusted height for the background section */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header-background h1 {
+            font-size: 3em; /* Font size for the main heading */
+            margin-bottom: 0;
+        }
+
+        .header-background p {
+            font-size: 1.5em; /* Font size for the paragraph */
+            margin-top: 0;
+        }
+
+        /* Adjusted size for shop card */
+        .shop-card {
+            width: 100%;
+            max-width: 300px; /* Adjusted size */
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-background">
+        <h1>RZK Electric</h1>
+        <p>Import and Deals in Electric Items</p>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to RZK Electric</h2>
+        <p>Your one-stop shop for quality electrical products and services.</p>
+        <section class="products">
+            <h3>Our Products</h3>
+            <div class="product">
+                <h4>RZK Electric Breakers</h4>
+                <img src="images/electric_breakers_3.jpeg" alt="RZK Electric Breakers">
+            </div>
+            <div class="product">
+                <h4>RZK Circuit Breakers</h4>
+                <img src="images/circuit_breakers_2.jpeg" alt="RZK Circuit Breakers">
+            </div>
+        </section>
+        <section class="find-us">
+            <h3>Find Us</h3>
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=RZK%20Traders&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <img id="shop-card-img" src="images/shop_card_1.jpeg" alt="Shop Card" class="shop-card">
+            <div class="contact-info">
+                <p>Phone: 0333-4479264, 0334-4262070</p>
+                <p>Email: rzktraders789@gmail.com</p>
+                <p>Location: B-18, Khyber Bara Electric Market, Shahalam Lahore</p>
+            </div>
+            <div class="social-media">
+                <p>Follow us on <a href="https://m.facebook.com/p/RZK-Traders-100054589382895/" target="_blank">Facebook</a></p>
+                <p>Contact us on <a href="https://u.wechat.com/ICcl68zvE_LlnbR_vIIU0d4" target="_blank">WeChat</a></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RZK Electric. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var currentImage = 1;
+        var totalImages = 3; // Total number of shop card images
+
+        function changeShopCard() {
+            currentImage = (currentImage % totalImages) + 1;
+            document.getElementById('shop-card-img').src = 'images/shop_card_' + currentImage + '.jpeg';
+        }
+    </script>
+</body>
+</html>
